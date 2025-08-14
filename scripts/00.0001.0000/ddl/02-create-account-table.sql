@@ -2,6 +2,7 @@ CREATE TABLE IF NOT EXISTS Account (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     code CHAR(36) NOT NULL, -- Same code as AuthService user
     gender_id INT UNSIGNED,
+    username VARCHAR(50) NOT NULL,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
     city VARCHAR(100),
