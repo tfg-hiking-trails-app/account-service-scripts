@@ -5,9 +5,9 @@ CREATE TABLE IF NOT EXISTS Account (
     username VARCHAR(50) NOT NULL,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
-    city VARCHAR(100),
-    state VARCHAR(100),
-    country VARCHAR(100),
+    country_id INT UNSIGNED,
+    state_id INT UNSIGNED,
+    city_id INT UNSIGNED,
     biography TEXT,
     date_of_birth DATE,
     weight DECIMAL(5,2),
@@ -19,5 +19,8 @@ CREATE TABLE IF NOT EXISTS Account (
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
     FOREIGN KEY (gender_id) REFERENCES Gender(id),
+    FOREIGN KEY (country_id) REFERENCES Country(id),
+    FOREIGN KEY (state_id) REFERENCES State(id),
+    FOREIGN KEY (city_id) REFERENCES City(id),
     UNIQUE KEY up_account_code (code)
 );

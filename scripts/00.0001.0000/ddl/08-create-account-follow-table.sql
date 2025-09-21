@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS AccountFollow (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    code CHAR(36) NOT NULL DEFAULT UUID(),
+    follower_account_id INT UNSIGNED NOT NULL,
+    followed_account_id INT UNSIGNED NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    FOREIGN KEY (follower_account_id) REFERENCES Account(id),
+    FOREIGN KEY (followed_account_id) REFERENCES Account(id)
+);
