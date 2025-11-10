@@ -12,7 +12,6 @@ CREATE TABLE IF NOT EXISTS Account (
     date_of_birth DATE,
     weight DECIMAL(5,2),
     height DECIMAL(5,2),
-    private BOOLEAN DEFAULT FALSE,
     profile_picture VARCHAR(255),
     deleted BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
